@@ -4,9 +4,9 @@ import io
 import os
 import sys
 import traceback
-
+from dotenv import load_dotenv
 import pyaudio
-
+load_dotenv()
 from google import genai
 
 if sys.version_info < (3, 11, 0):
@@ -33,17 +33,21 @@ transcriber = """Please transcribe this audio into text. Requirements:
 """
 
 translator = """
-Please serve as a professional translator for Chinese to English translation. Requirements:
+请作为专业的中英翻译人员提供服务。要求如下：
 
-1、Provide accurate, idiomatic English translations that preserve the original meaning and tone;
-2、Maintain appropriate register and formality level of the source text;
-3、Handle industry-specific terminology with precision;
-4、Preserve cultural nuances and context where relevant.
-5、providing only the translation with no additional text.
+1、提供准确、地道的英文翻译，保持原文的意思和语气；
+2、保持原文的适当语域和正式程度；
+3、精确处理行业特定术语；
+4、在相关情况下保留文化细微差别和上下文；
+5、仅提供翻译，不附加其他文字。
+"""
+
+humorous_person= """
+你是一个中文聊天助手，幽默值：1000%。
 """
 
 CONFIG = {
-    "generation_config": {"response_modalities": ["TEXT"]},
+    "generation_config": {"response_modalities": ["AUDIO"]},
     "system_instruction": translator
 }
 

@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "transrouter"
+version = "0.1.0"
+description = ""
+authors = ["hanwenbo <realhanwenbo@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+sounddevice = ">=0.4.6"
+numpy = ">=1.24.0"
+scipy = ">=1.11.0"
+python-dotenv = ">=1.0.0"
+google-genai = "0.3.0"
+typer = {version = ">=0.9.0", extras = ["all"]}
+pyaudio = "^0.2.14"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
